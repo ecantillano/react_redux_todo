@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Container, InputGroup, Button, FormControl, Alert } from "react-bootstrap";
+import { Container, InputGroup, Button, FormControl } from "react-bootstrap";
 import { connect } from 'react-redux';
 import { FaPlus } from "react-icons/fa";
 import { addTodo } from '../actions/actionCreator'
 import { bindActionCreators } from 'redux'
 import ReactDOM from 'react-dom';
+import {alert} from 'react-bootstrap-confirmation';
 
 class NewTask extends Component {
 
@@ -34,9 +35,7 @@ class NewTask extends Component {
         }
             
         else {
-            return (<Alert color="primary">
-                This is a primary alert — check it out!
-                    </Alert>)
+            alert('Debe escribir una tarea para poder agregar!');
         }
 
     }
